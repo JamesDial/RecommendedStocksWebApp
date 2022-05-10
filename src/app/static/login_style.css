@@ -1,0 +1,35 @@
+.border {
+    margin: 60px 0 0 0;
+    padding: 70px 40px;
+    width: 400px;
+    height: 450px;
+    background-color: #50C878;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    padding: 10px 40px;
+    background-color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    color:white;
+}
+
+.textbox{
+    padding: 10px 40px;
+    border-radius: 10px;
+}
+
+::placeholder {
+    opacity: 1;
+    font-style: oblique;
+}
+
+.word{
+    color:white;
+    font-weight: bold;
+}
+
+.bottom{
+    font-weight: bold;
+}

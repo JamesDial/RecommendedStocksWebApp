@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html style="background-color:#98fb98">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+        <link rel="stylesheet" href="../static/login_style.css">
+    </head>
+    <body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Login to your U-FI account</h1>
+             </div></br>
+            <h2 class="word">
+                <form action="{{ url_for('login') }}" method="POST">
+                  <div class="msg">{{ msg }}</div>
+                    <input id="email" name="email" type="text" placeholder="Enter your email" class="textbox"/></br></br>
+                    <input id="password" name="password" type="password" placeholder="Enter your password" class="textbox"/></br></br>
+                    <input type="submit" class="btn" value="Sign In"></br>
+                </form>
+            </h2>
+            <p class="bottom">Don't have an account?  <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+          </div>
+        </div>
+    </body>
+</html>

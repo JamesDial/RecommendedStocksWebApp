@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html style="background-color:#98fb98">
+	<head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup_style.css') }}">
+        <link rel="stylesheet" href="../static/signup_style.css">
+        <title>Register</title>
+	</head>
+	<body>
+		<div align="center">
+		<div align="center" class="border">
+			<div class="header">
+				<h1 class="word">Create a free U-FI account to get started</h1>
+			</div></br>
+			<h2 class="word">
+				<form action="{{ url_for('register') }}" method="post">
+				<div>  {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                      {% for message in messages %}
+                      {{ message }}
+                      {% endfor %}
+                      {% endif %}
+                      {% endwith %}
+                </div>
+
+					<input id="fname" name="fname" type="text" placeholder="Enter Your First Name" class="textbox"/></br></br>
+                    <input id="lname" name="lname" type="text" placeholder="Enter Your Last Name" class="textbox"/></br></br>
+                    <input id="email" name="email" type="text" placeholder="Enter Your Email" class="textbox"/></br>
+                <p class="control has-icons-left">
+					<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br>
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+
+                    </span>
+
+                </p>
+					<input id="signup" type="submit" class="btn" value="Sign Up"></br>
+				</form>
+			</h2>
+			<p class="bottom">Already have an account? <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>
+		</div>
+		</div>
+	</body>
+</html>

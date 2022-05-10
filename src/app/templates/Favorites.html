@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+        <br>
+    <a href="javascript:history.back()">Go Back and uncheck to remove from favorites</a>
+
+</head>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+<div class="bg-primary text-white p-5 text-center">
+    <h1>Watch List</h1>
+    <p>This is the favorites page. Below you will find your stocks and/or cryptos you saved to your favorites</p>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+            {% for all in watchList %}
+            <div class= "form-group" style="margin: 15px 0px 0px 30px">
+                <input type="checkbox" value="{{ all.type }}" name=allWatchList>
+               <b>{{ all.Name }}</b> {{ all.Symbol }} {{ all.Price }}
+            </div>
+            {%endfor%}
+</div>
+    <br><br>
+    <font size="5px"><a href = "/logout" style="float: left;">Logout</a><br></font>
+
+</body>
+</html>

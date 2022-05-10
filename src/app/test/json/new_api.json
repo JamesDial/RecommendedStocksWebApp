@@ -1,0 +1,266 @@
+{
+"status": "ok",
+"totalResults": 70,
+"articles": [
+{
+"source": {
+"id": "cnn",
+"name": "CNN"
+},
+"author": "Laura He, CNN Business",
+"title": "China silences prominent market analyst as economic slump deepens - CNN",
+"description": "Chinese social media have shut down the accounts of a prominent market analyst who drew attention in recent weeks to the dramatic slowdown in the country's economy and the effects of government policy on the tech industry.",
+"url": "https://www.cnn.com/2022/05/02/investing/hong-hao-social-media-banned-china-intl-hnk/index.html",
+"urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/220502011733-hao-hong-file-12062017-super-tease.jpg",
+"publishedAt": "2022-05-02T14:25:00Z",
+"content": null
+},
+{
+"source": {
+"id": "google-news",
+"name": "Google News"
+},
+"author": null,
+"title": "Dow Jones Rises After Stock Market Sell-Off Worsened; Treasury Yield Hits New High - Investor's Business Daily",
+"description": null,
+"url": "https://news.google.com/__i/rss/rd/articles/CBMikwFodHRwczovL3d3dy5pbnZlc3RvcnMuY29tL21hcmtldC10cmVuZC9zdG9jay1tYXJrZXQtdG9kYXkvZG93LWpvbmVzLWZ1dHVyZXMtZmFsbC1hZnRlci1zdG9jay1tYXJrZXQtc2VsbC1vZmYtMTAteWVhci10cmVhc3VyeS15aWVsZC1uZWFycy1uZXctaGlnaC_SAQA?oc=5",
+"urlToImage": null,
+"publishedAt": "2022-05-02T13:56:00Z",
+"content": null
+},
+{
+"source": {
+"id": null,
+"name": "Barron's"
+},
+"author": "Al Root",
+"title": "Tesla Stock Gets Preview From NIO, Other Chinese EV Makers. It Wasn't Good. - Barron's",
+"description": "Combined, the three delivered about 18,000 vehicles in April. That's the worst monthly result since May 2021.",
+"url": "https://www.barrons.com/articles/nio-li-auto-xpeng-april-deliveries-tesla-51651420731",
+"urlToImage": "https://images.barrons.com/im-517772/social",
+"publishedAt": "2022-05-02T13:56:00Z",
+"content": "Chinese electric vehicle makers \r\nNIO\r\n ,\r\n XPeng\r\nand \r\nLi Auto\r\nreported April deliveries on Sunday morning. The numbers arent very good. That gives \r\nTesla\r\ninvestors something else to worry about… [+3723 chars]"
+},
+{
+"source": {
+"id": "cnn",
+"name": "CNN"
+},
+"author": "Chris Isidore, CNN Business",
+"title": "Spirit rejects JetBlue's offer, saying it wants to be bought by Frontier - CNN",
+"description": "Spirit Airlines said it will stick with its deal to be purchased by Frontier Airlines, rejecting a more lucrative competing offer from JetBlue Airways.",
+"url": "https://www.cnn.com/2022/05/02/investing/spirit-rejects-jetblue-offer/index.html",
+"urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/220502082628-spirit-airlines-chicago-ohare-airport-040622-file-super-tease.jpg",
+"publishedAt": "2022-05-02T13:36:00Z",
+"content": null
+},
+{
+"source": {
+"id": null,
+"name": "CNBC"
+},
+"author": "Yun Li",
+"title": "Buffett bought more Apple last quarter and says he would have added more if the stock didn't rebound - CNBC",
+"description": "Warren Buffett bought the dip in his favorite stock Apple during the tech giant's sell-off in the first quarter.",
+"url": "https://www.cnbc.com/2022/05/02/buffett-bought-more-apple-last-quarter-and-says-he-would-have-added-more-if-the-stock-didnt-rebound.html",
+"urlToImage": "https://image.cnbcfm.com/api/v1/image/107054238-1651344035638-warren2.jpg?v=1651344110&w=1920&h=1080",
+"publishedAt": "2022-05-02T12:33:37Z",
+"content": "Warren Buffett bought the dip in his No. 1 stock Apple during the tech giant's sell-off in the first quarter.\r\nBerkshire Hathaway's chairman and CEO told CNBC's Becky Quick that he scooped up $600 mi… [+2061 chars]"
+},
+{
+"source": {
+"id": "reuters",
+"name": "Reuters"
+},
+"author": null,
+"title": "Apple hit with EU antitrust charge over mobile payments technology - Reuters",
+"description": "Apple <AAPL.O> faces a possible hefty fine and may have to open its mobile payment system to competitors after EU antitrust regulators charged the iPhone maker with restricting rivals' access to its technology used for mobile wallets.",
+"url": "https://www.reuters.com/technology/apple-hit-with-eu-antitrust-charge-over-its-payment-technology-2022-05-02/",
+"urlToImage": "https://www.reuters.com/resizer/Gwa9pHfvQGm-1vOhhkiP910GQQw=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/D5QTE4L2EBPOTCKGZQLF7I6HV4.jpg",
+"publishedAt": "2022-05-02T12:24:00Z",
+"content": "BRUSSELS, May 2 (Reuters) - Apple faces a possible hefty fine and may have to open its mobile payment system to competitors after EU antitrust regulators charged the iPhone maker with restricting riv… [+2663 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "New York Times"
+},
+"author": "Andrew Ross Sorkin, Vivian Giang, Stephen Gandel, Lauren Hirsch, Ephrat Livni, David F. Gallagher, Jenny Gross",
+"title": "The Federal Reserve’s Tough Spot - The New York Times",
+"description": "A stock market dive complicates the fight against inflation.",
+"url": "https://www.nytimes.com/2022/05/02/business/dealbook/the-fed-inflation.html",
+"urlToImage": "https://static01.nyt.com/images/2022/05/02/multimedia/02db-newsletter-1/02db-newsletter-1-facebookJumbo.jpg",
+"publishedAt": "2022-05-02T12:04:42Z",
+"content": "The Federal Reserve is meeting this week. The economy is running hot, and the Fed is trying to slow it down before widespread price pressures become even more of a problem. It lifted interest rates i… [+2129 chars]"
+},
+{
+"source": {
+"id": "the-wall-street-journal",
+"name": "The Wall Street Journal"
+},
+"author": "Byron Tau and Georgia Wells",
+"title": "Grindr User Data Has Been for Sale for Years - The Wall Street Journal",
+"description": "The gay-dating app’s user locations were collected and sold via ad networks since at least 2017. Grindr says it has curtailed the data it shares.",
+"url": "https://www.wsj.com/articles/grindr-user-data-has-been-for-sale-for-years-11651492800",
+"urlToImage": "https://images.wsj.net/im-521314/social",
+"publishedAt": "2022-05-02T12:00:00Z",
+"content": "The precise movements of millions of users of the gay-dating app Grindr were collected from a digital advertising network and made available for sale, according to people familiar with the matter.\r\nT… [+266 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "WESH Orlando"
+},
+"author": "Bob Hazen",
+"title": "Woman arrested after shooting, 6-hour standoff inside Orlando McDonald's - WESH 2 Orlando",
+"description": "Here's the latest:",
+"url": "https://www.wesh.com/article/mcdonalds-shooting-orlando/39875023",
+"urlToImage": "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/mcdonalds-shooting-and-standoff-1651416375.jpeg?crop=1.00xw:0.752xh;0,0.139xh&resize=1200:*",
+"publishedAt": "2022-05-02T11:45:00Z",
+"content": "ORLANDO, Fla. —WESH 2 is waiting to learn more information about a woman arrested after a shooting and 6-hour standoff inside an Orlando fast-food restaurant Saturday. \r\nDeputies responded to an arme… [+806 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "Yahoo Entertainment"
+},
+"author": "Emily McCormick",
+"title": "Stock market news live updates: Stock futures fall, adding to April losses - Yahoo Finance",
+"description": "Stocks headed for losses in the first session of May following one of the worst monthly performances for the S&P 500 since the depths of the pandemic in 2020...",
+"url": "https://finance.yahoo.com/news/stock-market-news-live-updates-may-2-2022-114426638.html",
+"urlToImage": "https://s.yimg.com/ny/api/res/1.2/qXMHjK1wmVvGm1ObJYv4og--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2022-04/a5f6b240-ca08-11ec-b7af-abd08b789d9e",
+"publishedAt": "2022-05-02T11:44:26Z",
+"content": "Stocks headed for losses in the first session of May following one of the worst monthly performances for the S&amp;P 500 since the depths of the pandemic in 2020.\r\nContracts on the S&amp;P 500 turned… [+4187 chars]"
+},
+{
+"source": {
+"id": "the-verge",
+"name": "The Verge"
+},
+"author": "Thomas Ricker",
+"title": "Ventje campers are built for the new hybrid workforce - The Verge",
+"description": "More gadget than car",
+"url": "https://www.theverge.com/2022/5/2/23052984/ventje-vw-camper-work-live-remote-price",
+"urlToImage": "https://cdn.vox-cdn.com/thumbor/QX8Ck9j5scWEPlkfHQNaAOmkzQ8=/0x217:1080x782/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/23432149/162432879_279123860261912_5448163730032428609_n.jpg",
+"publishedAt": "2022-05-02T11:40:44Z",
+"content": "More gadget than car"
+},
+{
+"source": {
+"id": null,
+"name": "YouTube"
+},
+"author": null,
+"title": "CNN media analyst has meltdown over Elon Musk Twitter takeover: US 'headed to hell' - Fox Business",
+"description": "FOX Business' Dagen McDowell, National Taxpayers Union EVP Brandon Arnold and former State Department senior adviser Christian Whitton discuss the media's ne...",
+"url": "https://www.youtube.com/watch?v=GqrzN77cA-Q",
+"urlToImage": "https://i.ytimg.com/vi/GqrzN77cA-Q/hqdefault.jpg",
+"publishedAt": "2022-05-02T11:30:06Z",
+"content": null
+},
+{
+"source": {
+"id": null,
+"name": "Gizmodo.com"
+},
+"author": "Matt Novak",
+"title": "Warren Buffett Says He Wouldn't Take All the Bitcoin in the World for $25 - Gizmodo",
+"description": "\"Assets, to have value, they have to deliver something to somebody.\"",
+"url": "https://gizmodo.com/warren-buffett-all-bitcoin-world-25-dollars-assets-valu-1848866967",
+"urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/bbc389f90510758bf8f4131a7e2cbacd.png",
+"publishedAt": "2022-05-02T11:30:00Z",
+"content": "Warren Buffett has always been a bitcoin skeptic. But the billionaire investor had his most harsh words yet for the cryptocurrency over the weekend. Buffett made it clear that his opposition to crypt… [+2297 chars]"
+},
+{
+"source": {
+"id": "cnn",
+"name": "CNN"
+},
+"author": "Matt Egan, CNN Business",
+"title": "America will recover all jobs lost during Covid by this summer, Fitch says - CNN",
+"description": "The United States is rapidly approaching a major jobs milestone that highlights the historically strong economic recovery from Covid-19.",
+"url": "https://www.cnn.com/2022/05/02/economy/jobs-economy-covid/index.html",
+"urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/220429104708-restricted-us-jobs-market-recovery-hospitality-super-tease.jpg",
+"publishedAt": "2022-05-02T11:07:00Z",
+"content": null
+},
+{
+"source": {
+"id": null,
+"name": "Yahoo Entertainment"
+},
+"author": "PR Newswire",
+"title": "Innoviz Selected by One of the Largest Global Vehicle Groups to be its Direct LiDAR Supplier for Series Production Vehicles; Increases Forward-Looking Order Book by $4 Billion - Yahoo Finance",
+"description": "Innoviz Technologies Ltd. (NASDAQ: INVZ) (the \"Company\" or \"Innoviz\"), a leading provider of high-performance LiDAR sensors and perception software...",
+"url": "https://finance.yahoo.com/news/innoviz-selected-one-largest-global-110000404.html",
+"urlToImage": "https://s.yimg.com/uu/api/res/1.2/PHNFHAdjx9lkFZPOeeqfdA--~B/aD0yMDk7dz00MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/prnewswire.com/47f089444bd527822cbf31eef6de8028",
+"publishedAt": "2022-05-02T11:00:00Z",
+"content": "Innoviz to Provide InnovizTwo LiDAR Sensor and Perception Software \r\nTEL AVIV, Israel , May 2, 2022 /PRNewswire/ -- Innoviz Technologies Ltd.\r\n (NASDAQ: INVZ) (the \"Company\" or \"Innoviz\"), a leading … [+5046 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "Yahoo Entertainment"
+},
+"author": "Michael MacKenzie and Chikako Mogi",
+"title": "Biggest Treasury Buyer Outside U.S. Quietly Selling Billions - Yahoo Finance",
+"description": "(Bloomberg) -- In times of Treasury turmoil, the biggest investor outside American soil has historically lent a helping hand. Not this time round. Most Read ...",
+"url": "https://finance.yahoo.com/news/biggest-treasury-buyer-outside-u-220000326.html",
+"urlToImage": "https://s.yimg.com/uu/api/res/1.2/ExjStmKTJgYn0n2YQ3QSRA--~B/aD02NzU7dz0xMjAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/bloomberg_markets_842/e7c72be48a5808b4fbef7887b9310dd3",
+"publishedAt": "2022-05-02T10:57:08Z",
+"content": "(Bloomberg) -- In times of Treasury turmoil, the biggest investor outside American soil has historically lent a helping hand. Not this time round.\r\nMost Read from Bloomberg\r\nJapanese institutional ma… [+4309 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "MarketWatch"
+},
+"author": "Barbara Kollmeyer",
+"title": "Storied VC says investors are unlearning the lessons of the last bull market. Jeff Bezos says you should listen. - MarketWatch",
+"description": "Critical information for the U.S. trading day",
+"url": "https://www.marketwatch.com/story/storied-vc-says-investors-are-unlearning-the-lessons-of-the-last-bull-market-jeff-bezos-says-you-should-listen-11651488831",
+"urlToImage": "https://images.mktw.net/im-535520/social",
+"publishedAt": "2022-05-02T10:53:00Z",
+"content": "Investors are trying to regroup following the worst month since the pandemic, and Fridays session that ended with the Dow tanking nearly 1,000 points and the S&amp;p 500 pushing back into correction … [+6566 chars]"
+},
+{
+"source": {
+"id": "bloomberg",
+"name": "Bloomberg"
+},
+"author": null,
+"title": "Airbnb (ABNB) Remote Work Push Is About Competing for Talent - Bloomberg",
+"description": null,
+"url": "https://www.bloomberg.com/tosv2.html?vid=&uuid=28cfe893-ca28-11ec-bd68-5a7274706e41&url=L25ld3MvbmV3c2xldHRlcnMvMjAyMi0wNS0wMi9haXJibmItYWJuYi1yZW1vdGUtd29yay1wdXNoLWlzLWFib3V0LWNvbXBldGluZy1mb3ItdGFsZW50",
+"urlToImage": null,
+"publishedAt": "2022-05-02T10:45:16Z",
+"content": "To continue, please click the box below to let us know you're not a robot."
+},
+{
+"source": {
+"id": null,
+"name": "MarketWatch"
+},
+"author": "Alisa Wolfson",
+"title": "4 economists and real estate pros on what to expect from home prices - MarketWatch",
+"description": "Predictions for the housing market.",
+"url": "https://www.marketwatch.com/picks/were-seeing-real-estate-markets-transition-toward-a-new-normal-4-economists-and-real-estate-pros-on-what-to-expect-from-home-prices-short-term-and-longer-term-01651250279",
+"urlToImage": "https://images.mktw.net/im-523096/social",
+"publishedAt": "2022-05-02T10:39:00Z",
+"content": "Home prices have been on a rapid ascent: Depending on which gauge you look at, US home prices have been rising at a pace of 15% to 20% a year. But pros say that rapid ascent is likely to slow through… [+3203 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "Electrek"
+},
+"author": null,
+"title": "Ford F-150 Lightning electric pickup needs a $3,900 home device to use it as backup power - Electrek",
+"description": "Ford has confirmed the price of its “Home Integration System,” which enables the F-150 Lightning electric pickup to power your home in case of an outage. It will cost $3,895 before installation which is actually quite a good price… When Ford unveiled the F-15…",
+"url": "https://electrek.co/2022/05/02/ford-f-150-lightning-electric-pickup-needs-a-4000-home-device-use-backup-power/",
+"urlToImage": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2022/05/Ford-Home-Integration-system.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+"publishedAt": "2022-05-02T10:14:00Z",
+"content": "Ford has confirmed the price of its “Home Integration System,” which enables the F-150 Lightning electric pickup to power your home in case of an outage.\r\nIt will cost $3,895 before installation whic… [+2927 chars]"
+}
+]
+}

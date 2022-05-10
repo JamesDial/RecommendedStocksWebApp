@@ -1,0 +1,46 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='welcome_style.css') }}">
+    <link rel="stylesheet" href="../static/welcome_style.css">
+    <title>Home</title>
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+<div>
+    <h1 id="header">Welcome to U-FI</h1>
+</div>
+
+
+<div>
+    <p class="text">U-FI is a web application that recommends stocks and cryptocurrencies.</br>
+                In order to use this service, you must create an account.</p>
+</div>
+
+<div id="buttons">
+    <form action="/login">
+        <button class="button" type="submit" style="margin-left:72%">
+            <span>Login</span>
+        </button>
+    </form>
+
+    <form action="/register">
+        <button class="button" type="submit" style="margin-right:72%">
+            <span>Sign Up</span>
+        </button>
+    </form>
+</div>
+
+<a href="/dashboard">Dashboard</a><br>
+<a id="rest" href="/resetdb">Reset database</a>
+
+</body>
+</html>

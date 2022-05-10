@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='surveystyle.css') }}">
+    <link rel="stylesheet" href="../static/surveystyle.css">
+    <title>UF-I Survey Results</title>
+</head>
+<body>
+<div>
+    <h1>Survey Results:</h1>
+    <h3>Your Risk Tolerance is: {{ result }}.</h3>
+</div>
+<a href="/dashboard">Dashboard</a><br>
+</body>
+</html>
+

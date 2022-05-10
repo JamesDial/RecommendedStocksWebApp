@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='surveystyle.css') }}">
+    <link rel="stylesheet" href="../static/surveystyle.css">
+    <title>U-FI Survey Question</title>
+</head>
+
+<body>
+<h1>Welcome to U-FI Survey</h1>
+<h3>Answer the below questions in order to receive your risk tolerance level.</h3>
+
+<div>
+    <form action="/survey" method="post">
+    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                      {% for message in messages %}
+                      {{ message }}
+                      {% endfor %}
+                      {% endif %}
+                      {% endwith %}
+
+
+        {% for question in data %}
+            <h2>{{ question.question }}</h2>
+
+            {% for answer in question.answers %}
+                <input type="radio" id="{{ answer }}" name="{{ question.id }}" value="{{ answer }}"> {{ answer }}<br>
+            {% endfor %}
+
+        {% endfor %}
+        <br>
+        <button type="submit" value="Submit" name="Submit">
+            Submit
+        </button>
+    </form>
+</div>
+</body>
+</html>
+

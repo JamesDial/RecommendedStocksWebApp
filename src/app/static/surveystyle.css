@@ -1,0 +1,38 @@
+body {
+  font-family: system-ui;
+  background-color: #50C878;
+  color: black;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size:52px;
+  margin-bottom:6px;
+}
+
+h3 {
+  color:white;
+  text-align:center;
+  font-size:24px;
+}
+
+form {
+  background-color: #fff;
+  width:55%;
+  margin: 26px auto;
+  padding: 16px 20px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  background-color: #50C878;
+  border: 1px solid #777;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 21px;
+  display: block;
+  width: 60%;
+  margin: 30px auto;
+}
+

@@ -1,0 +1,859 @@
+<!doctype html>
+<html style="background-color: #50C878">
+<head>
+    <title>Home Page</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboardstyles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename="js/sort.js")}}" ></script>
+    <script type="text/javascript" src="{{ url_for('static', filename="js/favorites.js")}}" ></script>
+    <script type="text/javascript" src="{{ url_for('static', filename="js/stock_info.js")}}" ></script>
+
+
+</head>
+
+<body style="vertical-align: top">
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+<div style="height:3000px; width:1000px; border: black 100px">
+    <font size="5px"><a href = "/survey" style="float: right;">Survey Questions</a><br></font>
+    <font size="5px"><a href = "/logout" style="float: right;">Logout</a><br></font>
+    <font size="5px"><a href = "/news" style="float: right;">News</a><br></font>
+    <h1 style="font-size: 100px; text-align: center"> U-Fi </h1>
+
+    <h2 style="font-size: 75px; text-align: center"> University Finance </h2>
+
+
+    <h3 style="text-align: center">Your recommended lists of {{ len }} stocks and {{ len2 }} crypto: </h3>
+
+
+    <div style="text-align: center">
+        <input id="sortByPriceLH" type = "button" value = "Sort By Price (lowest to highest)">
+        <input id="sortByPriceHL" type = "button" value = "Sort By Price (highest to lowest)">
+        <input id="sortByNameAZ" type = "button" value = "Sort By Name (A-Z)">
+        <input id="sortByNameZA" type = "button" value = "Sort By Name (Z-A)">
+        <input id="sortBySymbolAZ" type = "button" value = "Sort By Symbol (A-Z)">
+        <input id="sortBySymbolZA" type = "button" value = "Sort By Symbol (Z-A)">
+    </div>
+
+    <div id="list" style="text-align: center">
+    <form action="/fav" method="POST">
+        <h3 style="text-align: center"> Recommended Stock List </h3>
+            {% for stock in stock_list %}
+            <div class= "form-group" style="margin: 15px 0px 0px 30px">
+                <input type="checkbox" value="{{ stock.symbol }}" name=stock_name>
+               <b>{{ stock.name }}</b> {{ stock.symbol }} {{ stock.price }}
+            </div>
+        {%endfor%}
+        <br> <br>
+        <h3 style="text-align: center"> Recommended Crypto List </h3>
+        {% for crypto in crypto_list %}
+            <div class= "form-group" style="margin: 15px 0px 0px 30px">
+                <input type="checkbox" value="{{ crypto.symbol }}" name=crypto_name>
+                <b>{{ crypto.name }}</b> {{ crypto.symbol }} {{ crypto.price }}
+            </div>
+            {%endfor%}
+        <br> <br>
+        <h3 style="text-align: center"> All Stocks </h3>
+            {% for stock in all_stocks_copy %}
+            <div class= "form-group" style="margin: 15px 0px 0px 30px">
+                <input type="checkbox" value="{{ stock.symbol }}" name=all_stock_name>
+                <b>{{ stock.name }}</b> {{ stock.symbol }}
+            </div>
+            {%endfor%}
+        <br> <br>
+            <h3 style="text-align: center"> All Crypto </h3>
+            {% for crypto in all_crypto_copy %}
+            <div style="margin: 15px 0px 0px 30px">
+                <input type="checkbox" value="{{ crypto.Symbol }}" name=all_crypto_name>
+                <b>{{ crypto.Name }}</b> {{ crypto.Symbol }}
+            </div>
+            {%endfor%}
+        <br>
+    <input onclick="addToFavorites()" type="submit" value="Add Checked Items to Watch List" style="margin-left:20px"></p>
+    </form>
+    </div>
+
+
+
+    <div style="text-align: center" id="stock_list_price_asc">
+        <h3 style="text-align: center"> Sorted by Price (lowest to highest)</h3>
+        <h3 style="text-align: center"> Stock List</h3>
+        {% for stock in stock_list_price_asc %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ stock.name }}</strong> - {{ stock.symbol }} {{ stock.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+        <h3 style="text-align: center"> Crypto List</h3>
+        {% for crypto in crypto_list_price_asc %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ crypto.name }}</strong> - {{ crypto.symbol }} {{ crypto.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div style="text-align: center" id="stock_list_price_desc">
+        <h3 style="text-align: center"> Sorted by Price (highest to lowest)</h3>
+        <h3 style="text-align: center"> Stock List</h3>
+        {% for stock in stock_list_price_desc %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ stock.name }}</strong> - {{ stock.symbol }} {{ stock.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+        <h3 style="text-align: center"> Crypto List</h3>
+        {% for crypto in crypto_list_price_desc %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ crypto.name }}</strong> - {{ crypto.symbol }} {{ crypto.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div style="text-align: center" id="stock_list_alpha">
+        <h3 style="text-align: center"> Sorted by Name (A-Z)</h3>
+        <h3 style="text-align: center"> Stock List</h3>
+        {% for stock in stock_list_alpha %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ stock.name }}</strong> - {{ stock.symbol }} {{ stock.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+        <h3 style="text-align: center"> Crypto List</h3>
+        {% for crypto in crypto_list_alpha %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ crypto.name }}</strong> - {{ crypto.symbol }} {{ crypto.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div style="text-align: center" id="stock_list_rev_alpha">
+        <h3 style="text-align: center"> Sorted by Name (Z-A)</h3>
+        <h3 style="text-align: center"> Stock List</h3>
+        {% for stock in stock_list_rev_alpha %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ stock.name }}</strong> - {{ stock.symbol }} {{ stock.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+        <h3 style="text-align: center"> Crypto List</h3>
+        {% for crypto in crypto_list_rev_alpha %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ crypto.name }}</strong> - {{ crypto.symbol }} {{ crypto.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div style="text-align: center" id="stock_list_alpha_sym">
+        <h3 style="text-align: center"> Sorted by Symbol (A-Z)</h3>
+        <h3 style="text-align: center"> Stock List</h3>
+        {% for stock in stock_list_alpha_sym %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ stock.name }}</strong> - {{ stock.symbol }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+        <h3 style="text-align: center"> Crypto List</h3>
+        {% for crypto in crypto_list_alpha_sym %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ crypto.name }}</strong> - {{ crypto.symbol }} {{ crypto.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+    <div style="text-align: center" id="stock_list_rev_alpha_sym">
+        <h3 style="text-align: center"> Sorted by Symbol (Z-A)</h3>
+        <h3 style="text-align: center"> Stock List</h3>
+        {% for stock in stock_list_rev_alpha_sym %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ stock.name }}</strong> - {{ stock.symbol }} {{ stock.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+        <h3 style="text-align: center"> Crypto List</h3>
+        {% for crypto in crypto_list_rev_alpha_sym %}
+        <div style="margin: 15px 0px 0px 30px">
+            <div class="popup">
+                <input type="checkbox">
+                <label onclick="showStockInfo()">
+                    <strong>{{ crypto.name }}</strong> - {{ crypto.symbol }} {{ crypto.price }}
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <br>
+
+
+    <br /><br />
+    <div class="tradingview-widget-container" style="margin: auto;width: 50%;">
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+            {
+                "title_raw" : "Cryptocurrencies",
+                "belowLineFillColorGrowing": "rgba(60, 188, 152, 0.05)",
+                "gridLineColor": "rgba(233, 233, 234, 1)",
+                "scaleFontColor": "rgba(218, 221, 224, 1)",
+                "title": "Cryptocurrencies",
+                "tabs": [
+                {
+                    "title_raw": "Overview",
+                    "symbols": [
+                        {
+                            "s": "BITFINEX:BTCUSD"
+                        },
+                        {
+                            "s": "BITFINEX:ETHUSD"
+                        },
+                        {
+                            "s": "BITFINEX:XRPUSD"
+                        },
+                        {
+                            "s": "COINBASE:BCHUSD"
+                        },
+                        {
+                            "s": "COINBASE:LTCUSD"
+                        },
+                        {
+                            "s": "BITFINEX:SOLUSD"
+                        },
+                        {
+                            "s": "BITFINEX:IOTUSD"
+                        },
+                        {
+                            "s": "BITFINEX:BTCUSD"
+                        },
+                        {
+                            "s": "COINBASE:BTCEUR"
+                        },
+                        {
+                            "s": "COINBASE:BTCGBP"
+                        },
+                        {
+                            "s": "BITFLYER:BTCJPY"
+                        },
+                        {
+                            "s": "CME:BTC1!"
+                        },
+                        {
+                            "s": "BITFINEX:XRPUSD"
+                        },
+                        {
+                            "s": "KRAKEN:XRPEUR"
+                        },
+                        {
+                            "s": "KORBIT:XRPKRW"
+                        },
+                        {
+                            "s": "BITSO:XRPMXN"
+                        },
+                        {
+                            "s": "BINANCE:XRPBTC"
+                        },
+                        {
+                            "s": "BITTREX:XRPETH"
+                        },
+                        {
+                            "s": "COINBASE:ETHUSD"
+                        },
+                        {
+                            "s": "KRAKEN:ETHEUR"
+                        },
+                        {
+                            "s": "KRAKEN:ETHGBP"
+                        },
+                        {
+                            "s": "KRAKEN:ETHJPY"
+                        },
+                        {
+                            "s": "POLONIEX:ETHBTC"
+                        },
+                        {
+                            "s": "COINBASE:SOLUSD"
+                        },
+                        {
+                            "s": "KRAKEN:SOLEUR"
+                        },
+                        {
+                            "s": "KRAKEN:SOLGBP"
+                        },
+                        {
+                            "s": "POLONIEX:SOLBTC"
+                        },
+                        {
+                            "s": "COINBASE:BCHUSD"
+                        },
+                        {
+                            "s": "BITSTAMP:BCHEUR"
+                        },
+                        {
+                            "s": "CEXIO:BCHGBP"
+                        },
+                        {
+                            "s": "POLONIEX:BCHBTC"
+                        },
+                        {
+                            "s": "HITBTC:BCHETH"
+                        }
+                    ],
+                    "title": "Overview"
+                }
+            ],
+
+                "plotLineColorFalling": "rgba(255, 74, 104, 1)",
+                "plotLineColorGrowing": "rgba(60, 188, 152, 1)",
+                "showChart": true,
+                "title_link": "/markets/cryptocurrencies/prices-all/",
+                "locale": "en",
+                "symbolActiveColor": "rgba(41, 213, 129, 0.79)",
+                "belowLineFillColorFalling": "rgba(255, 74, 104, 0.05)",
+                "height": 660,
+                "width": 400
+            }
+        </script>
+    </div>
+
+
+
+    <br /><br />
+    <div class="tradingview-widget-container" style="margin: auto;width: 100%;">
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+            {
+                "gridLineColor": "rgba(233, 233, 234, 1)",
+                "scaleFontColor": "rgba(218, 221, 224, 1)",
+                "title": "Stocks",
+                "tabs": [
+                {
+                    "symbols": [
+                        {
+                            "s": "NYSE:JPM",
+                            "d": "Jpmorgan Chase & Co"
+                        },
+                        {
+                            "s": "NYSE:WFC",
+                            "d": "Wells Fargo Co New"
+                        },
+                        {
+                            "s": "NYSE:BAC",
+                            "d": "Bank Amer Corp"
+                        },
+                        {
+                            "s": "NYSE:HSBC",
+                            "d": "Hsbc Hldgs Plc"
+                        },
+                        {
+                            "s": "NYSE:C",
+                            "d": "Citigroup Inc"
+                        },
+                        {
+                            "s": "NYSE:BRK.A",
+                            "d": "Berkshire Hathaway inc"
+                        },
+                        {
+                            "s": "NYSE:MKL",
+                            "d": "Markel Corp"
+                        },
+                        {
+                            "s": "NYSE:WTM",
+                            "d": "White Mountains Insurance Group"
+                        },
+                        {
+                            "s": "NYSE:Y",
+                            "d": "Alleghany Corp"
+                        },
+                        {
+                            "s": "NASDAQ:EQIX",
+                            "d": "Equinix"
+                        },
+                        {
+                            "s": "NYSE:BLK",
+                            "d": "Blackrock"
+                        },
+                        {
+                            "s": "NASDAQ:FCNCA",
+                            "d": "First Citizens Bancshares"
+                        },
+                        {
+                            "s": "NASDAQ:UHAL",
+                            "d": "Amerco"
+                        },
+                        {
+                            "s": "NASDAQ:CACC",
+                            "d": "Credit Acceptance Corp"
+                        },
+                        {
+                            "s": "NASDAQ:SIVB",
+                            "d": "SVB Financial Group"
+                        },
+                        {
+                            "s": "NYSE:MA",
+                            "d": "Mastercard Incorporated"
+                        }
+                    ],
+                    "title": "Financial"
+                },
+
+
+                {
+                    "symbols": [
+                        {
+                            "s": "NASDAQ:AAPL",
+                            "d": "Apple"
+                        },
+                        {
+                            "s": "NASDAQ:AAOI",
+                            "d": "Applied Optoelectronics"
+                        },
+                        {
+                            "s": "NASDAQ:ACLS",
+                            "d": "Axcelis Technologies"
+                        },
+                        {
+                            "s": "NASDAQ:AMD",
+                            "d": "Advanced Micro Devices"
+                        },
+                        {
+                            "s": "NASDAQ:AMBA",
+                            "d": "Ambarella"
+                        },
+                        {
+                            "s": "NASDAQ:ASTR",
+                            "d": "Astra Space"
+                        },
+                        {
+                            "s": "NASDAQ:AUID",
+                            "d": "Ipsidy"
+                        },
+                        {
+                            "s": "NASDAQ:AVGO",
+                            "d": "Broadcom inc"
+                        },
+                        {
+                            "s": "NASDAQ:AZTA",
+                            "d": "Azenta inc"
+                        },
+                        {
+                            "s": "NYSE:CAJ",
+                            "d": "Canon inc"
+                        },
+                        {
+                            "s": "NYSE:DELL",
+                            "d": "DELL Tec inc"
+                        },
+                        {
+                            "s": "NASDAQ:DGLY",
+                            "d": "Digital Ally"
+                        },
+                        {
+                            "s": "NASDAQ:GOOGL",
+                            "d": "Google Inc"
+                        },
+                        {
+                            "s": "NASDAQ:MSFT",
+                            "d": "Microsoft Corp"
+                        },
+                        {
+                            "s": "NYSE:BB",
+                            "d": "Blackberry Limited"
+                        },
+                        {
+                            "s": "NASDAQ:FB",
+                            "d": "Facebook Inc"
+                        },
+
+                        {
+                            "s": "NYSE:ORCL",
+                            "d": "Oracle Corp"
+                        },
+                        {
+                            "s": "NASDAQ:INTC",
+                            "d": "Intel Corp"
+                        }
+                    ],
+                    "title": "Technology"
+                },
+
+
+                {
+                    "symbols": [
+                        {
+                            "s": "NYSE:AMPY",
+                            "d": "Amplify Energy Corp"
+                        },
+                        {
+                            "s": "NYSE:AMR",
+                            "d": "Alpha Metallurgical Resources"
+                        },
+                        {
+                            "s": "NASDAQ:APA",
+                            "d": "APA Corp"
+                        },
+                        {
+                            "s": "NYSE:AR",
+                            "d": "Antero Resources Corp"
+                        },
+                        {
+                            "s": "NYSE:ARCH",
+                            "d": "Arch Resources"
+                        },
+                        {
+                            "s": "NASDAQ:AREC",
+                            "d": "American Resources Corp"
+                        },
+                        {
+                            "s": "NYSE:PXD",
+                            "d": "Pioneer Natural Resources Company"
+                        },
+                        {
+                            "s": "NYSE:CVX",
+                            "d": "Chevron Corp"
+                        },
+                        {
+                            "s": "NASDAQ:OAS",
+                            "d": "Oasis Petroleum"
+                        },
+                        {
+                            "s": "NASDAQ:FANG",
+                            "d": "DiamondBack Energy"
+                        },
+                        {
+                            "s": "NYSE:EOG",
+                            "d": "Eog Resources"
+                        },
+                        {
+                            "s": "NYSE:HES",
+                            "d": "Hess Corp"
+                        },
+                        {
+                            "s": "NYSE:VLO",
+                            "d": "Valero Energy Corp"
+                        },
+                        {
+                            "s": "NYSE:COP",
+                            "d": "Conocophillips"
+                        },
+                        {
+                            "s": "NYSE:MPC",
+                            "d": "Marathon Petroleum Corp"
+                        },
+                        {
+                            "s": "NYSE:XOM",
+                            "d": "Exxon Mobil Corp"
+                        },
+                        {
+                            "s": "NYSE:LPI",
+                            "d": "Laredo Petroleum inc"
+                        },
+                        {
+                            "s": "NYSE:PSX",
+                            "d": "Phillips 66"
+                        },
+                        {
+                            "s": "NASDAQ:ARLP",
+                            "d": "Alliance Resource Partners"
+                        }
+                    ],
+                    "title": "Energy"
+                },
+
+
+                {
+                    "symbols": [
+                        {
+                            "s": "NASDAQ:ACHC",
+                            "d": "Acadia Healthcare"
+                        },
+                        {
+                            "s": "NASDAQ:ADUS",
+                            "d": "Addus Homecare Corp"
+                        },
+                        {
+                            "s": "NYSE:AGL",
+                            "d": "Agilon Health"
+                        },
+                        {
+                            "s": "NASDAQ:AIH",
+                            "d": "Aesthetic Medical International Holdings Group"
+                        },
+                        {
+                            "s": "NASDAQ:AKU",
+                            "d": "Akumin"
+                        },
+                        {
+                            "s": "NYSE:UNH",
+                            "d": "UnitedHealth Group"
+                        },
+                        {
+                            "s": "NYSE:CHE",
+                            "d": "Chemed Corp"
+                        },
+                        {
+                            "s": "NYSE:HUM",
+                            "d": "Humana inc"
+                        },
+                        {
+                            "s": "NYSE:MOH",
+                            "d": "Molina HealthCare"
+                        },
+                        {
+                            "s": "NYSE:LH",
+                            "d": "Laboratory Corp of America"
+                        },
+                        {
+                            "s": "NYSE:CI",
+                            "d": "Cigna Corp"
+                        },
+                        {
+                            "s": "NYSE:HCA",
+                            "d": "HCA HealthCare inc"
+                        },
+                        {
+                            "s": "NYSE:IQV",
+                            "d": "Iqvia Holdings"
+                        },
+                        {
+                            "s": "NASDAQ:LHCG",
+                            "d": "LHC Group"
+                        },
+                        {
+                            "s": "NASDAQ:AMED",
+                            "d": "Amedisys inc"
+                        },
+                        {
+                            "s": "NYSE:UHS",
+                            "d": "Universal Health Services"
+                        },
+                        {
+                            "s": "NYSE:DGX",
+                            "d": "Quest Diagnostics Incorporated"
+                        },
+                        {
+                            "s": "NASDAQ:ALHC",
+                            "d": "Alignment Healthcare"
+                        },
+                        {
+                            "s": "NASDAQ:ALR",
+                            "d": "Alerislife"
+                        }
+                    ],
+                    "title": "Health"
+                },
+
+                {
+                    "symbols": [
+                        {
+                            "s": "NYSE:AEE",
+                            "d": "American Corp"
+                        },
+                        {
+                            "s": "NASDAQ:AEP",
+                            "d": "American Electric Power Company"
+                        },
+                        {
+                            "s": "NYSE:AES",
+                            "d": "The Aes Corp"
+                        },
+                        {
+                            "s": "NYSE:AESC",
+                            "d": "The Aes Corporation Corporate"
+                        },
+                        {
+                            "s": "NYSE:AGR",
+                            "d": "Avangrid"
+                        },
+                        {
+                            "s": "NYSE:ALE",
+                            "d": "Allete"
+                        },
+                        {
+                            "s": "NYSE:AMPS",
+                            "d": "Altus Power"
+                        }
+                    ],
+                    "title": "Utilities"
+                },
+
+
+                {
+                    "symbols": [
+                        {
+                            "s": "NASDAQ:AAL",
+                            "d": "American Airlines Group"
+                        },
+                        {
+                            "s": "NASDAQ:AAWW",
+                            "d": "Atlas Air Worldwide Holdings"
+                        },
+                        {
+                            "s": "NASDAQ:AIRT",
+                            "d": "Air T"
+                        },
+                        {
+                            "s": "NYSE:ALK",
+                            "d": "Alaska Air Group"
+                        },
+                        {
+                            "s": "NASDAQ:ARCB",
+                            "d": "Arcbest Corp"
+                        },
+                        {
+                            "s": "NYSE:ASC",
+                            "d": "Ardmore Shipping Corporation"
+                        },
+                        {
+                            "s": "NYSE:ASR",
+                            "d": "Grupo Aeroportuario Del Sureste"
+                        }
+                    ],
+                    "title": "Transportation"
+                },
+
+
+                {
+                    "symbols": [
+                        {
+                            "s": "NASDAQ:AMZN",
+                            "d": "Amazon Com Inc"
+                        },
+                        {
+                            "s": "NYSE:BABA",
+                            "d": "Alibaba Group Hldg Ltd"
+                        },
+                        {
+                            "s": "NYSE:T",
+                            "d": "At&t Inc"
+                        },
+
+                        {
+                            "s": "NASDAQ:ABNB",
+                            "d": "AIRBNB inc"
+                        },
+                        {
+                            "s": "NYSE:AMC",
+                            "d": "AMC Entertainment Holdings"
+                        },
+                        {
+                            "s": "NASDAQ:ARKR",
+                            "d": "ARK Restaurants Corp"
+                        },
+                        {
+                            "s": "NASDAQ:APEI",
+                            "d": "American Public Education"
+                        },
+                        {
+                            "s": "NYSE:ARMK",
+                            "d": "Aramark"
+                        },
+                        {
+                            "s": "NYSE:ARCO",
+                            "d": "Arcos Dorados Holdings"
+                        },
+                        {
+                            "s": "NASDAQ:BKNG",
+                            "d": "Booking Holdings inc"
+                        },
+                        {
+                            "s": "NASDAQ:UHAL",
+                            "d": "Amerco"
+                        },
+                        {
+                            "s": "NYSE:CMG",
+                            "d": "Chipotle Mexican Grill"
+                        },
+                        {
+                            "s": "NYSE:CABO",
+                            "d": "Cabel one"
+                        },
+
+
+                        {
+                            "s": "NYSE:WMT",
+                            "d": "Wal-mart Stores Inc"
+                        },
+                        {
+                            "s": "NYSE:V",
+                            "d": "Visa Inc"
+                        }
+                    ],
+                    "title": "Services"
+                }
+            ],
+                "plotLineColorFalling": "rgba(255, 74, 104, 1)",
+                "plotLineColorGrowing": "rgba(60, 188, 152, 1)",
+                "showChart": true,
+                "height": 660,
+                "locale": "en",
+                "symbolActiveColor": "rgba(242, 250, 254, 1)",
+                "belowLineFillColorFalling": "rgba(255, 74, 104, 0.05)",
+                "belowLineFillColorGrowing": "rgba(60, 188, 152, 0.05)",
+                "width": 600
+            }
+        </script>
+    </div>
+
+</div>
+
+</body>
+</html>
