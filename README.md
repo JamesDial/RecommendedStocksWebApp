@@ -77,15 +77,7 @@ Deploying to heroku steps
 
 
 
-From the Welcome Page, click the link "Reset database" link at the bottom to purge and initialize the database with some new users:
+From the Welcome Page, click the link "Reset database" link at the bottom to purge and initialize the database with some new users
 
-* kris@example.com, 1234pass
-* mike@example.com, word5678
-* james@example.com, marv8902
-
-Currently:
-* The login page works and **is connected to the database**
-* The stock list Dashboard will display, but **_is not_** conencted to the database
-* The Signup page will display, but _**is not**_ connected to the database
 
 To pre-load some Stock or Crypto data into the database, add it to the `reset` method in `ufi_database.py` and click the "Reset Database" link.
