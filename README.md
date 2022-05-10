@@ -25,8 +25,6 @@ For this project we're building a finance website that helps the user have a bet
 ```
 cd src
 pip install -r requirements.txt
-flask db migrate
-flask db upgrade
 ```
 6. Create a new Run Configuration from dropdown next to the run buttons:
    1. In the Run/Debug Configurations window, click the + icon.
